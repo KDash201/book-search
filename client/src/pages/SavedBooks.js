@@ -83,6 +83,7 @@ const SavedBooks = () => {
                     onClick={() => handleDeleteBook(book.bookId)}
                   >
                     Delete this Book!
+                    {error && <div>There are no books to delete</div>}
                   </Button>
                 </Card.Body>
               </Card>
