@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -24,7 +24,6 @@ export const ADD_USER = gql`
   }
 `;
 
-
 //TODO add the pageCount and publishedDate to the savedBooks query
 export const SAVE_BOOK = gql`
   mutation saveBook($bookData: BookInput!) {
@@ -39,6 +38,8 @@ export const SAVE_BOOK = gql`
         description
         title
         link
+        pageCount
+        publishedDate
       }
     }
   }
@@ -57,7 +58,9 @@ export const REMOVE_BOOK = gql`
         image
         description
         title
-        link  
+        link
+        pageCount
+        publishedDate
       }
     }
   }
