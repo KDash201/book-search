@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react";
 import {
   Jumbotron,
   Container,
   CardColumns,
   Card,
   Button,
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
-import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_ME } from '../utils/queries';
-import { REMOVE_BOOK } from '../utils/mutations';
-import { removeBookId } from '../utils/localStorage';
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_ME } from "../utils/queries";
+import { REMOVE_BOOK } from "../utils/mutations";
+import { removeBookId } from "../utils/localStorage";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const SavedBooks = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -56,9 +56,9 @@ const SavedBooks = () => {
         <h2>
           {userData.savedBooks?.length
             ? `Viewing ${userData.savedBooks.length} saved ${
-                userData.savedBooks.length === 1 ? 'book' : 'books'
+                userData.savedBooks.length === 1 ? "book" : "books"
               }:`
-            : 'You have no saved books!'}
+            : "You have no saved books!"}
         </h2>
         <CardColumns>
           {userData.savedBooks?.map((book) => {
@@ -75,7 +75,9 @@ const SavedBooks = () => {
                   <Card.Title>{book.title}</Card.Title>
                   <p className="small">Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
-                  { /* TODO: show the book's pageCount and published Date */}
+                  {/* TODO: show the book's pageCount and published Date */}
+                  <p>Page Count: {book.pageCount}</p>
+                  <p>Published Date: {book.publishedDate}</p>
                   <Button
                     className="btn-block btn-danger"
                     onClick={() => handleDeleteBook(book.bookId)}
