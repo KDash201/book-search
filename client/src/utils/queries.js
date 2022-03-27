@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 //TODO add pageCount and publishedDate to savedBooks
 export const QUERY_ME = gql`
@@ -14,6 +14,8 @@ export const QUERY_ME = gql`
         description
         title
         link
+        pageCount
+        publishedDate
       }
     }
   }
