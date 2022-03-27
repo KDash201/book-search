@@ -1,5 +1,4 @@
-const { gql } = require('apollo-server-express');
-
+const { gql } = require("apollo-server-express");
 
 //TODO type Book should include the pageCount and publishedDate
 //TODO input BookInput should include the pageCount and publishedDate
@@ -19,6 +18,8 @@ const typeDefs = gql`
     image: String
     link: String
     title: String!
+    pageCount: Int
+    publishedDate: String
   }
 
   type Auth {
@@ -33,6 +34,8 @@ const typeDefs = gql`
     image: String
     link: String
     title: String!
+    pageCount: Int
+    publishedDate: String
   }
 
   type Query {
